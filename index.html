@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <title>JavaScript</title>
+</head>
+<body>
+<header class="column">
+  <h1>JavaScript Control work</h1>
+</header>
+<div class="container">
+  <aside id="left"></aside>
+  <main>
+    <h2 class="text">Do you want to feel it out? Click the button!</h2>
+    <a href="#popup" id="header" class="header_phone popup-link">
+      Enter data
+    </a>
+    <div class="enter"></div>
+    <div id="content">
+<!--      <table id="table">-->
+<!--        <tbody>-->
+<!--        <tr>-->
+<!--          <th colspan="3">Parameters of the desired device</th>-->
+<!--        </tr>-->
+<!--        <tr id="headers_of_table">-->
+<!--          <th>Company</th>-->
+<!--          <th>Color</th>-->
+<!--          <th>Diagonal</th>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--      </table>-->
+    </div>
+    <h2 class="text" id="color">Response from the server</h2>
+    <div id="APIBlock">
+      <div class="picture"></div>
+    </div>
+  </main>
+  <aside id="right"></aside>
+</div>
+<footer class="column">
+  <h3 class="text">The mission was completed by Yevheniia Shcherbina</h3>
+  <h4 class="text">20.10.2022</h4>
+</footer>
+
+<div class="wrapper">
+  <div id="popup" class="popup">
+    <div class="popup_body">
+      <div class="popup_content">
+        <a href="#" class="popup_close close-popup">X</a>
+        <div class="popup_title">Enter the parameters of the desired device</div>
+        <div class="popup_input">
+          <form action="/" method="POST" id="form">
+            <div>
+            <p><b>Enter company name</b></p>
+            <p><input type="text" name="name" value="apple"></p>
+            </div>
+            <div>
+              <p><b>Enter device color</b></p>
+            <p><input type="text" name="color" value="black"><Br>
+            </div>
+            <div>
+              <p><b>Enter diagonal</b></p>
+              <p><input type="text" name="diagonal" value="14.7"><Br>
+            </div>
+            <div>
+              <button id="button_submit" type="submit">Submit</button>
+            </div>
+          </form>
+<!--          <form action="js/server.js">-->
+<!--            <p><b>Select characters</b></p>-->
+<!--            <p><input type="checkbox" name="answer" value="a1">Rick Sanchez<Br>-->
+<!--              <input type="checkbox" name="answer" value="a2">Morty Smith<Br>-->
+<!--              <input type="checkbox" name="answer" value="a3">Summer Smith</p>-->
+<!--            <p><input type="submit"></p>-->
+<!--          </form>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/script.js"></script>
+<script src="js/server.js"></script>
+</body>
+</html>

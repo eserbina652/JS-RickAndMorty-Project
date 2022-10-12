@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  /*background-color: #77fa5e;*/
+  color: white;
+}
+header {
+  letter-spacing: 5px;
+  text-align: center;
+  color: white;
+  font-weight: lighter;
+  min-height: 100px;
+  background-color: #04912f;
+  border-bottom: 3px solid #2cff00;
+  padding-top: 10px;
+}
+
+aside {
+  display: flex;
+  width: 200px;
+  height: 80%;
+}
+
+#left {
+  order: 1;
+  /*background-color: #95e585;*/
+  max-width: 200px;
+  min-height: 100%;
+  justify-content: space-between;
+}
+
+#right {
+  order: 3;
+  /*background-color: #95e585;*/
+  max-width: 200px;
+  min-height: 100%;
+  justify-content: space-between;
+}
+
+h2 {
+  padding: 50px 0 50px 0;
+}
+.enter {
+  height: 75px;
+}
+
+#content {
+  display: block;
+  margin: auto;
+
+}
+#table {
+  font-weight: lighter;
+  letter-spacing: 5px;
+  display: block;
+  margin: auto;
+  border-collapse: collapse;
+  border: 3px solid #599f55;
+  background-color: white;
+}
+
+th, td {
+  width: 250px;
+  border: 1px solid #5ab055;
+  background-color: rgb(63, 77, 61);
+  font-size: 20px;
+  padding: 20px;
+}
+main {
+  display: flex;
+  justify-content: center;
+  order: 2;
+  width: 80%;
+  /*margin-left: 500px;*/
+  position: center;
+  text-align: center;
+  flex-direction: column;
+  background: rgb(6, 58, 0);
+  border: 3px solid #2dff00;
+  border-top: none;
+
+}
+button {
+  display: block;
+  margin: auto;
+}
+
+
+#header {
+  display: block;
+  margin: auto;
+  height: 30px;
+  width: 125px;
+  font-size: 20px;
+  padding: 12px;
+  background-color: rgba(149,229,133,1);
+  border-radius: 10px ;
+  border: 1px solid #2dff00;
+  text-decoration: none;
+  color: rgb(6, 58, 0);
+  font-family: inherit;
+  font-weight: bolder;
+}
+
+#header:hover {
+  background-color: rgb(141, 217, 126);
+  border: 1px solid #2dff00;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  background: rgb(63, 77, 61);
+}
+
+footer {
+  background-color: #0e2c09;
+  text-align: center;
+  letter-spacing: 5px;
+  font-weight: lighter;
+}
+
+.text {
+  text-align: center;
+  letter-spacing: 5px;
+  font-weight: lighter;
+}
+
+#color {
+  font-size: 50px;
+  margin: 0;
+}
