@@ -1,6 +1,7 @@
 const popupLinks = document.querySelectorAll('.popup-link')
 const body = document.querySelector('body')
 const lockPadding = document.querySelectorAll('.lock-padding')
+const neForm = document.getElementById('neForm')
 
 let unlock = true
 
@@ -38,11 +39,6 @@ function popupOpen(currentPopup) {
       bodyLock()
     }
     currentPopup.classList.add('open')
-    currentPopup.addEventListener('click', function (e) {
-      if (!e.target.closest('popup_content')) {
-        popupClose(e.target.closest('.popup'))
-      }
-    })
   }
 }
 
@@ -134,3 +130,8 @@ async function getResponse(name) {
 }
 
 getResponse()
+neForm.addEventListener('click', function (e) {
+  if (!e.target.closest('popup_content')) {
+    popupClose(e.target.closest('.popup'))
+  }
+})
