@@ -91,8 +91,8 @@ document.addEventListener('keydown', function (e) {
   }
 })
 
-const div = document.getElementById('APIBlock')
-div.style.width = 'auto'
+// const div = document.getElementById('APIBlock')
+// div.style.width = 'auto'
 // div.style.display = 'flex'
 // div.style.flexDirection = 'row'
 // div.style.flexWrap = 'wrap'
@@ -107,26 +107,68 @@ div.style.width = 'auto'
 // button.style.marginLeft = '450px'
 // button.style.marginTop = '30px'
 
+const form = document.getElementById('form')
+const wrapper = document.querySelector('#content')
+const table = document.createElement('table')
+const headerText = document.createElement('div')
+const tBody = document.createElement('tbody')
+const trString = document.createElement('tr')
 
-async function getResponse(name) {
-  let response = await fetch(`https://rickandmortyapi.com/api/character`)
-  let obj = await response.json()
-  obj = obj.results
-  obj.forEach(el => {
-    let img = document.createElement('img')
-    let p = document.createElement('p')
-    p.innerText = el.name
-    p.style.fontSize = '40px'
-    p.style.color = '#5dff55'
-    img.style.width = 'auto'
-    img.style.height = 'auto'
-    img.style.border = '3px solid green'
-    img.style.marginTop = '30px'
-    img.src = el.image
-    div.appendChild(img)
-    img.append(p)
-    div.appendChild(p)
-  })
+const tdAvatar = document.createElement('img')
+const tdName = document.createElement('td')
+const tdStatus = document.createElement('td')
+
+
+headerText.innerText = 'Parameters of the desired device'
+tdAvatar.innerText = 'Avatar'
+tdName.innerText = 'Name'
+tdStatus.innerText = 'Status'
+headerText.style.whiteSpace = 'nowrap'
+headerText.style.backgroundColor = 'rgb(63, 77, 61)'
+headerText.style.border = '2px solid #5ab055'
+headerText.style.fontSize = '25px'
+headerText.style.padding = '20px 0 20px 0'
+wrapper.appendChild(headerText)
+
+trString.appendChild(tdAvatar)
+trString.appendChild(tdName)
+trString.appendChild(tdStatus)
+
+tBody.appendChild(trString)
+table.appendChild(tBody)
+wrapper.appendChild(table)
+
+
+async function getResponse(event, name) {
+    event.preventDefault()
+    name = form.querySelector('[name="name"]')
+
+  if (name === 'all') {
+    let response = await fetch(`https://rickandmortyapi.com/api/character`)
+    let obj = await response.json()
+    obj = obj.results
+    obj.forEach(el => {
+      const trBody = document.createElement('tr')
+      const tdAvatar = document.createElement('img')
+      const tdName = document.createElement('td')
+      const tdStatus = document.createElement('td')
+      tdStatus.innerText = el.status
+      tdName.innerText = el.name
+      tdName.style.fontSize = '40px'
+      tdName.style.color = '#5dff55'
+      tdAvatar.style.width = 'auto'
+      tdAvatar.style.height = 'auto'
+      tdAvatar.style.border = '3px solid green'
+      tdAvatar.style.marginTop = '30px'
+      tdAvatar.src = el.image
+      trBody.appendChild(tdAvatar)
+      trBody.appendChild(tdName)
+      trBody.appendChild(tdDiagonal)
+      table.appendChild(trBody)
+    })
+  }
+  form.addEventListener('submit', retriveFormValue)
+
 }
 //TODO some todo
 //TODO kjhasdkfjhslgjlkernglknlkrthjoifjlbknlznbjsdguysgr
