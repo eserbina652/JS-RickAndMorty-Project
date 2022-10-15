@@ -1,5 +1,4 @@
 const form = document.getElementById('form')
-// const table = document.getElementById('content')
 const wrapper = document.querySelector('#content')
 const table = document.createElement('table')
 const headerText = document.createElement('div')
@@ -31,29 +30,17 @@ table.appendChild(tBody)
 wrapper.appendChild(table)
 
 
-function retriveFormValue(event) {
+function retriveFormValue(event,param) {
   event.preventDefault()
+
   const name = form.querySelector('[name="name"]')
   const color = form.querySelector('[name="color"]')
   const diagonal = form.querySelector('[name="diagonal"]')
 
-  // const values = {
-  //   name: name.value,
-  //   color: color.value,
-  //   diagonal: diagonal.value
-  // }
   const trBody = document.createElement('tr')
   const tdName = document.createElement('td')
   const tdColor = document.createElement('td')
   const tdDiagonal = document.createElement('td')
-
-
-  // thName.style.width = '250px'
-  // thName.style.marginRight = '5px'
-  // thName.style.border = '1px solid #5ab055'
-  // thName.style.backgroundColor = 'rgb(63, 77, 61)'
-  // thName.style.fontSize = '20px'
-  // thName.style.padding = '20px'
 
   tdName.innerText = name.value
   tdColor.innerText = color.value

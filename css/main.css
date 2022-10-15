@@ -6,6 +6,7 @@ body {
   /*background-color: #77fa5e;*/
   color: white;
 }
+
 header {
   letter-spacing: 5px;
   text-align: center;
@@ -42,6 +43,7 @@ aside {
 h2 {
   padding: 50px 0 50px 0;
 }
+
 .enter {
   height: 75px;
 }
@@ -51,6 +53,7 @@ h2 {
   margin: auto;
 
 }
+
 #table {
   font-weight: lighter;
   letter-spacing: 5px;
@@ -68,6 +71,7 @@ th, td {
   font-size: 20px;
   padding: 20px;
 }
+
 main {
   display: flex;
   justify-content: center;
@@ -82,6 +86,7 @@ main {
   border-top: none;
 
 }
+
 button {
   display: block;
   margin: auto;
@@ -95,8 +100,8 @@ button {
   width: 125px;
   font-size: 20px;
   padding: 12px;
-  background-color: rgba(149,229,133,1);
-  border-radius: 10px ;
+  background-color: rgba(149, 229, 133, 1);
+  border-radius: 10px;
   border: 1px solid #2dff00;
   text-decoration: none;
   color: rgb(6, 58, 0);
@@ -108,6 +113,7 @@ button {
   background-color: rgb(141, 217, 126);
   border: 1px solid #2dff00;
 }
+
 .container {
   display: flex;
   flex-direction: row;
