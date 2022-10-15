@@ -128,7 +128,8 @@ async function getResponse(name) {
     div.appendChild(p)
   })
 }
-
+//TODO some todo
+//TODO kjhasdkfjhslgjlkernglknlkrthjoifjlbknlznbjsdguysgr
 getResponse()
 neForm.addEventListener('click', function (e) {
   if (!e.target.closest('popup_content')) {
