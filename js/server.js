@@ -170,8 +170,6 @@ async function getResponse(event, name) {
   form.addEventListener('submit', retriveFormValue)
 
 }
-//TODO some todo
-//TODO kjhasdkfjhslgjlkernglknlkrthjoifjlbknlznbjsdguysgr
 getResponse()
 neForm.addEventListener('click', function (e) {
   if (!e.target.closest('popup_content')) {
