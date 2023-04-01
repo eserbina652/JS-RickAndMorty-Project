@@ -30,7 +30,7 @@ table.appendChild(tBody)
 wrapper.appendChild(table)
 
 
-function retriveFormValue(event,param) {
+function retriveFormValue(event) {
   event.preventDefault()
 
   const name = form.querySelector('[name="name"]')

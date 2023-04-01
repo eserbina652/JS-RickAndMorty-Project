@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Sono-Regular';
-  src: url("../assets/fonts/Sono-Regular.woff")format("woff");
+  src: url("../assets/fonts/Sono-Regular.woff") format("woff");
 }
 
 body {
@@ -12,9 +12,11 @@ body {
   color: white;
   z-index: 1;
 }
+
 html {
   z-index: 0;
 }
+
 header {
   font-family: 'Sono-Regular', sans-serif;
   letter-spacing: 5px;
@@ -86,8 +88,7 @@ th, td {
   order: 2;
   width: 80%;
   height: 30%;
-  /*margin-left: 500px;*/
-  position: center;
+  position: relative;
   text-align: center;
   flex-direction: column;
   background: #0a100e;
@@ -107,8 +108,8 @@ button {
 .container {
   display: flex;
   flex-direction: row;
-  background: rgb(0,22,8);
-  background: linear-gradient(90deg, rgba(0,22,8,1) 0%, rgb(148, 245, 190) 50%, rgba(0,22,8,1) 100%);
+  background: rgb(0, 22, 8);
+  background: linear-gradient(90deg, rgba(0, 22, 8, 1) 0%, rgb(148, 245, 190) 50%, rgba(0, 22, 8, 1) 100%);
   z-index: 2;
 }
 
@@ -166,7 +167,7 @@ footer {
   border-radius: 5px;
   flex-direction: row;
   padding: 1vh 1.9vw 1vh 1.95vw;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 #back-button:hover, #sort-button:hover {
@@ -189,7 +190,6 @@ input[type='date'] {
   font-size: 17px;
   height: 5vh;
   padding: 0 2px 0 2px;
-  /*margin-bottom: 5vh;*/
   cursor: pointer;
   z-index: 1;
 }
@@ -201,11 +201,9 @@ input[type='date'] {
 }
 
 
-
 .enter2 {
   height: 50px;
   z-index: 0;
-  /*border-bottom: 1px solid #2a4634;*/
 }
 
 
@@ -214,6 +212,5 @@ input[type='date'] {
   position: relative;
   align-items: center;
   flex-direction: column;
-  /*order: 2;*/
   z-index: 0;
 }

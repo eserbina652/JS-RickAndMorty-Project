@@ -14,7 +14,7 @@ if (popupLinks.length > 0) {
       const popupName = popupLink.getAttribute('href').replace('#', '')
       const currentPopup = document.getElementById(popupName)
       popupOpen(currentPopup)
-      e.preventDefault()//если событие не выполняется явно, его действие по умолчанию не должно выполняться так, как обычно
+      e.preventDefault()
     })
   }
 }
@@ -45,7 +45,8 @@ function popupOpen(currentPopup) {
 function popupClose(popupActive, doUnlock = true) {
   if (unlock) {
     popupActive.classList.remove('open')
-  } if (doUnlock) {
+  }
+  if (doUnlock) {
     bodyUnLock()
   }
 }
@@ -86,26 +87,10 @@ function bodyUnLock() {
 
 document.addEventListener('keydown', function (e) {
   if (e.which === 27) {
-    const  popupActive = document.querySelector('.popup.open')
+    const popupActive = document.querySelector('.popup.open')
     popupClose(popupActive)
   }
 })
-
-// const div = document.getElementById('APIBlock')
-// div.style.width = 'auto'
-// div.style.display = 'flex'
-// div.style.flexDirection = 'row'
-// div.style.flexWrap = 'wrap'
-// div.style.alignItems = 'flex-start'
-// div.style.justifyContent = 'space around'
-// div.style.alignContent = 'flex-start'
-// const button = document.getElementById('button')
-// button.style.height = '70px'
-// button.style.width = '70px'
-// button.style.backgroundColor = 'red'
-// button.style.borderRadius = '20px'
-// button.style.marginLeft = '450px'
-// button.style.marginTop = '30px'
 
 const form = document.getElementById('form')
 const wrapper = document.querySelector('#content')
@@ -140,8 +125,8 @@ wrapper.appendChild(table)
 
 
 async function getResponse(event, name) {
-    event.preventDefault()
-    name = form.querySelector('[name="name"]')
+  event.preventDefault()
+  name = form.querySelector('[name="name"]')
 
   if (name === 'all') {
     let response = await fetch(`https://rickandmortyapi.com/api/character`)
@@ -170,6 +155,7 @@ async function getResponse(event, name) {
   form.addEventListener('submit', retriveFormValue)
 
 }
+
 getResponse()
 neForm.addEventListener('click', function (e) {
   if (!e.target.closest('popup_content')) {

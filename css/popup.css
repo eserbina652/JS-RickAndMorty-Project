@@ -1,11 +1,7 @@
-*{
+* {
   margin: 0;
- z-index: 1;
+  z-index: 1;
 }
-/*html {*/
-/*  box-sizing: border-box;*/
-/*  font-size: 100%;*/
-/*}*/
 
 #button_open {
   position: relative;
@@ -24,7 +20,7 @@
   filter: drop-shadow(0 0 20px rgba(0, 255, 149, 0.47));
 }
 
-#button_open:hover{
+#button_open:hover {
   background-color: #22382a;
 }
 
@@ -115,21 +111,16 @@
 }
 
 .clearButton {
-  /*display: inherit;*/
-  /*position: relative;*/
-  /*align-items: center;*/
   justify-content: center;
   width: 15vw;
   height: 10vh;
-  /*margin-right: 20vw;*/
-  /*margin-top: 15vh;*/
-  /*margin-right: 20vw;*/
   font-size: 18px;
   font-weight: lighter;
   letter-spacing: 3px;
   flex-direction: column;
   z-index: 2;
 }
+
 #clearText {
   margin-top: -14vh;
   padding-bottom: 2.5vh;
@@ -142,26 +133,26 @@
   font-size: 18px;
   color: white;
   border: 2px solid #6e9179;
-  padding: 1.1vh 1vw 1.1vh 1vw ;
+  padding: 1.1vh 1vw 1.1vh 1vw;
   margin-top: 1.5vh;
   cursor: pointer;
 }
 
 #clearButton:hover {
   background-color: #22382a;
-
 }
 
-
 #clear-popup {
-  display: block;
+  display: flex;
   position: fixed;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.44);
   min-height: 100vh;
   min-width: 100vw;
   z-index: 4;
-  padding: 20vh 33vw 0 0vw;
-  margin: -65vh 0vw 0vh -50vw;
+  padding: 20vh 33vw 0 0;
+  margin: -65vh 0 0 -50vw;
 }
 
 #clear-popup-close {
@@ -171,9 +162,10 @@
 #little-clear-popup {
   display: flex;
   margin: 0 auto;
+  align-items: center;
   z-index: 5;
   background-color: #476750;
-  max-height: 50vh;
+  max-height: 25vh;
   max-width: 40vw;
   flex-direction: column;
 }
@@ -220,11 +212,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  /*flex-wrap: wrap;*/
   min-width: 20vw;
   position: relative;
-  /*margin-top: -1.5vh;*/
-  /*margin-right: 1vw;*/
   z-index: 1;
 }
 
@@ -235,24 +224,17 @@
 .select {
   background-color: #2a4634;
   color: white;
-  /*display: flex;*/
-  /*justify-content: space-between;*/
-  /*align-items: center;*/
   border: 2px solid #6e9179;
   border-radius: 5px;
   padding: 0.7vh 1.5vw 0.7vh 1.5vw;
   cursor: pointer;
   margin-top: 10.5vh;
-  transition: background-position  0.3s;
+  transition: background-position 0.3s;
 }
 
 .selected {
   font-size: 18px;
 }
-
-/*
-clicked styles
- */
 
 .select-clicked {
   border: 2px solid #6e9179;
@@ -303,20 +285,15 @@ clicked styles
   background-color: #22382a;
 }
 
-/*
-Active styles
- */
 .active {
   background: #23242a;
 }
 
-/*
-Open styles
- */
 .menu-open {
   display: block;
   opacity: 1;
 }
+
 .buttonsContain {
   padding-top: 40px;
   display: flex;
@@ -325,23 +302,32 @@ Open styles
   max-height: 10vh;
 }
 
+.invalid {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #8cab9c;
+  border-bottom: 1px solid red;
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .sort {
     margin: 0;
   }
+
   #sort-text {
-    margin: 0vh 0vw 0vh -10vw;
+    margin: 0 0 0 -10vw;
   }
 
   .clearContainer {
-    margin: 18.5vh 0vw 0vh -7vw;
+    margin: 18.5vh 0 0 -7vw;
     /*margin-left: -7vw;*/
     min-width: 15vw;
   }
 
   #clear-popup {
-    padding: 20vh 33vw 0 0vw;
-    margin: -75vh 0vw 0vh -55vw;
+    padding: 20vh 33vw 0 0;
+    margin: -75vh 0 0 -55vw;
   }
 
   .select {
@@ -354,22 +340,22 @@ Open styles
     margin-top: -6vh;
     max-width: 30vw;
   }
+
   #sort-text {
-    margin: 0vh 13vw 0vh 0vw;
+    margin: 0 13vw 0 0;
   }
 
   .clearContainer {
-    margin: 18.5vh 0vw 0vh -7vw;
-    /*margin-left: -7vw;*/
+    margin: 18.5vh 0 0 -7vw;
     min-width: 15vw;
   }
 
   #clear-popup {
-    margin: -75vh 0vw 0vh -55vw;
+    margin: -75vh 0 0 -55vw;
   }
 
   #little-clear-popup {
-    margin: 0 0vw 0 37vw;
+    margin: 0 0 0 37vw;
   }
 
   .select {
@@ -382,22 +368,22 @@ Open styles
     margin-top: -6vh;
     max-width: 30vw;
   }
+
   #sort-text {
-    margin: 0vh 13vw 0vh 0vw;
+    margin: 0 13vw 0 0;
   }
 
   .clearContainer {
-    margin: 16vh 0vw 0vh -7vw;
-    /*margin-left: -7vw;*/
+    margin: 16vh 0 0 -7vw;
     min-width: 15vw;
   }
 
   #clear-popup {
-    margin: -75vh 0vw 0vh -55vw;
+    margin: -75vh 0 0 -55vw;
   }
 
   #little-clear-popup {
-    margin: 0 0vw 0 37vw;
+    margin: 0 0 0 37vw;
   }
 
   .select {
@@ -406,21 +392,3 @@ Open styles
 }
 
 
-
-.invalid {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  color: #8cab9c;
-  border-bottom: 1px solid red;
-}
-
-/*#error1, #error2, #error3, #error4{*/
-/*  color: red;*/
-/*  font-size: 10px;*/
-/*  display: none;*/
-/*}*/
-
-/*.errInvalid {*/
-/*  display: inherit;*/
-/*}*/

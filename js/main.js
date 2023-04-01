@@ -330,7 +330,6 @@ const localController = (diagonal, name, color, date) => {
     }
 
     result = [...prevStorage, localStorageData]
-    console.log(result)
     localStorage.setItem('localData', JSON.stringify(result))
   }
 }
@@ -355,13 +354,10 @@ function errClear(type, clear) {
         p.innerText = 'Incorrect name'
         nameInput.classList.add('invalid')
         errName.appendChild(p)
-        console.log(p.data)
       }
-      console.log('zdes2')
       if (clear) {
         nameInput.classList.remove('invalid')
         errName.innerHTML = ''
-        console.log('tam')
       }
     }
       break;
@@ -372,7 +368,6 @@ function errClear(type, clear) {
         dateInput.style.borderBottom = '1px solid red'
         errDate.appendChild(p)
       }
-      console.log('zdes2')
       if (clear) {
         dateInput.style.borderBottom = '1px solid black'
         errDate.innerHTML = ''
@@ -386,7 +381,6 @@ function errClear(type, clear) {
         colorInput.classList.add('invalid')
         errColor.appendChild(p)
       }
-      console.log('zdes2')
       if (clear) {
         colorInput.classList.remove('invalid')
         errColor.innerHTML = ''
@@ -400,7 +394,6 @@ function errClear(type, clear) {
         diagonalInput.classList.add('invalid')
         errDiagonal.appendChild(p)
       }
-      console.log('zdes2')
       if (clear) {
         diagonalInput.classList.remove('invalid')
         errDiagonal.innerHTML = ''
@@ -409,7 +402,8 @@ function errClear(type, clear) {
 
       break;
 
-    default: {}
+    default: {
+    }
   }
 }
 

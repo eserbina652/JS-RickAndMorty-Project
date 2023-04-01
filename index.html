@@ -19,62 +19,62 @@
   <aside id="left"></aside>
   <main class="main" id="main">
     <div class="content">
-    <h2 class="text">Do you want to feel the table? Click the button!</h2>
-    <a href="#popup" id="button_open">
-      Enter data
-    </a>
-    <div class="enter"></div>
+      <h2 class="text">Do you want to feel the table? Click the button!</h2>
+      <a href="#popup" id="button_open">
+        Enter data
+      </a>
+      <div class="enter"></div>
 
-    <div class="buttonsContain">
-    <div class="sort">
-      <h3 id="sort-text">Sort by Date</h3>
-      <div class="sort-input">
-        <input id="start-date" type="date" name="start-date" value="2012-01-01" maxlength="10">
-      </div>
-      <div class="sort-input">
-        <input id="end-date" type="date" name="end-date" value="2021-01-01" maxlength="10">
-      </div>
-      <div class="sorted-buttons">
-        <a id="sort-button">Sort</a>
-        <a id="back-button">Back</a>
-      </div>
-    </div>
+      <div class="buttonsContain">
+        <div class="sort">
+          <h3 id="sort-text">Sort by Date</h3>
+          <div class="sort-input">
+            <input id="start-date" type="date" name="start-date" value="2012-01-01" maxlength="10">
+          </div>
+          <div class="sort-input">
+            <input id="end-date" type="date" name="end-date" value="2021-01-01" maxlength="10">
+          </div>
+          <div class="sorted-buttons">
+            <a id="sort-button">Sort</a>
+            <a id="back-button">Back</a>
+          </div>
+        </div>
 
-    <div class="clearButton">
-      <div class="clearContainer">
-      <p id="clearText">if you want to clear the table, Click the button</p>
-      <div id="clearEnter"></div>
-      <a id="clearButton" href="#">Button</a>
-      </div>
+        <div class="clearButton">
+          <div class="clearContainer">
+            <p id="clearText">if you want to clear the table, Click the button</p>
+            <div id="clearEnter"></div>
+            <a id="clearButton" href="#">Button</a>
+          </div>
 
-    <div id="clear-popup-close">
-      <div id="little-clear-popup">
-        <div class="clears-header">
-          <a id="clear-close" href="#">x</a>
+          <div id="clear-popup-close">
+            <div id="little-clear-popup">
+              <div class="clears-header">
+                <a id="clear-close" href="#">x</a>
+              </div>
+              <div class="clears-body">
+                <p>Do you really want to clear the table?</p>
+              </div>
+              <div class="clears-footer">
+                <a id="clear-yes" href="#">Yes</a>
+                <a id="clear-no" href="#">No</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="clears-body">
-          <p>Do you really want to clear the table?</p>
-        </div>
-        <div class="clears-footer">
-          <a id="clear-yes" href="#">Yes</a>
-          <a id="clear-no" href="#">No</a>
+        <div class="dropdown">
+          <div class="select">
+            <div class="caret"></div>
+            <div id="sortedBy" class="selected">Sorted by...</div>
+          </div>
+          <ul class="menu">
+            <li id="newest">Newest</li>
+            <li id="oldest">Oldest</li>
+          </ul>
         </div>
       </div>
-    </div>
-    </div>
-    <div class="dropdown">
-      <div class="select">
-        <div class="caret"></div>
-        <div id="sortedBy" class="selected">Sorted by...</div>
-      </div>
-      <ul class="menu">
-        <li id="newest">Newest</li>
-        <li id="oldest">Oldest</li>
-      </ul>
-    </div>
-    </div>
-    <div class="enter2"></div>
-    <div id="content"></div>
+      <div class="enter2"></div>
+      <div id="content"></div>
     </div>
 
 
@@ -99,23 +99,27 @@
       <div id="popup_body">
         <div id="enterDate">
           <p><b>Enter date</b></p>
-<!--          Please write the date from 01.01.1900 to 01.01.2100-->
-          <p><input data-rule='date' id="date" class="popup-input" title="Please write the date from 01.01.1980 to 01.01.2100" type="date" name="date" value="2021-01-01" min="1980-01-01" max="2100-01-01"></p>
+          <p><input data-rule='date' id="date" class="popup-input"
+                    title="Please write the date from 01.01.1980 to 01.01.2100" type="date" name="date"
+                    value="2021-01-01" min="1980-01-01" max="2100-01-01"></p>
           <div class="err" id="error1"></div>
         </div>
         <div id="enterName">
           <p><b>Enter company name</b></p>
-          <p><input data-rule='text' id="name" class="popup-input" title="Please write the mark of the devise" type="text" name="name" value="apple" maxlength="15"></p>
+          <p><input data-rule='text' id="name" class="popup-input" title="Please write the mark of the devise"
+                    type="text" name="name" value="apple" maxlength="15"></p>
           <div class="err" id="error2"></div>
         </div>
         <div id="enterColor">
           <p><b>Enter device color</b></p>
-          <p><input data-rule='text' id="color" class="popup-input" pattern="Please write the color of the devise"  type="text" name="color" value="black" maxlength="15"><Br>
+          <p><input data-rule='text' id="color" class="popup-input" pattern="Please write the color of the devise"
+                    type="text" name="color" value="black" maxlength="15"><Br>
           <div class="err" id="error3"></div>
         </div>
         <div id="enterDiagonal">
           <p><b>Enter diagonal</b></p>
-          <p><input data-rule='number' id="diagonal" class="popup-input" title="Please write the diagonal of the devise" type="text" name="diagonal" value="14.7" maxlength="10"><Br>
+          <p><input data-rule='number' id="diagonal" class="popup-input" title="Please write the diagonal of the devise"
+                    type="text" name="diagonal" value="14.7" maxlength="10"><Br>
           <div class="err" id="error4"></div>
         </div>
       </div>
