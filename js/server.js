@@ -103,12 +103,12 @@ const tdAvatar = document.createElement('img')
 const tdName = document.createElement('td')
 const tdStatus = document.createElement('td')
 
-
+trString.style.display = 'table-column'
 headerText.innerText = 'Parameters of the desired device'
 tdAvatar.innerText = 'Avatar'
 tdName.innerText = 'Name'
 tdStatus.innerText = 'Status'
-headerText.style.whiteSpace = 'nowrap'
+headerText.style.whiteSpace = 'wrap'
 headerText.style.backgroundColor = 'rgb(63, 77, 61)'
 headerText.style.border = '2px solid #5ab055'
 headerText.style.fontSize = '25px'
@@ -141,14 +141,13 @@ async function getResponse(event, name) {
       tdName.innerText = el.name
       tdName.style.fontSize = '40px'
       tdName.style.color = '#5dff55'
-      tdAvatar.style.width = 'auto'
+      tdAvatar.style.maxWidth = '90%'
+      tdAvatar.style.padding = '10px'
       tdAvatar.style.height = 'auto'
       tdAvatar.style.border = '3px solid green'
-      tdAvatar.style.marginTop = '30px'
       tdAvatar.src = el.image
       trBody.appendChild(tdAvatar)
       trBody.appendChild(tdName)
-      trBody.appendChild(tdDiagonal)
       table.appendChild(trBody)
     })
   }

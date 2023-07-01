@@ -12,14 +12,14 @@
     particleMaxVelocity: 1.4,
     lineLength: 300
   }
-  canvas.style.zIndex = '-1'
   document.querySelector('#APIBlock').append(canvas)
 
-
   window.onresize = function () {
-    w = canvas.width = window.innerWidth * 0.67
-    h = canvas.height = 8500
+    const container = document.getElementById('main')
+    const containerWidth = container.clientWidth;
 
+    canvas.width = containerWidth;
+    h = canvas.height = 8500;
   }
 
   class Particle {
@@ -28,7 +28,6 @@
       this.y = Math.random() * h
       this.velocityX = Math.random() * (properties.particleMaxVelocity * 2) - properties.particleMaxVelocity
       this.velocityY = Math.random() * (properties.particleMaxVelocity * 2) - properties.particleMaxVelocity
-
     }
 
     position() {
@@ -64,7 +63,7 @@
         length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2))
         if (length < properties.lineLength) {
           opacity = 1 - length / properties.lineLength
-          ctx.lineWidth = '0,5'
+          ctx.lineWidth = '0.5'
           ctx.strokeStyle = 'rgba(0,93,79, ' + opacity + ')'
           ctx.beginPath()
           ctx.moveTo(x1, y1)
@@ -84,10 +83,13 @@
   }
 
   function loop() {
-    reDrawBg()
-    reDrawParticles()
-    drawLines()
-    requestAnimationFrame(loop)
+    ctx.clearRect(0, 0, w, h); // Очистка канваса
+    canvas.width = w; // Обновление ширины канваса
+    canvas.height = h; // Обновление высоты канваса
+    reDrawBg(); // Перерисовка фона
+    reDrawParticles();
+    drawLines();
+    requestAnimationFrame(loop);
   }
 
 

@@ -60,7 +60,6 @@ h2 {
 
 #content {
   display: block;
-  margin-top: 5vh;
 }
 
 #table {
@@ -129,30 +128,20 @@ footer {
 }
 
 .sort {
-  display: flex;
-  position: relative;
-  justify-content: flex-start;
   max-width: 35vw;
-  flex-wrap: wrap;
-  min-height: 10vh;
-  border-radius: 5px;
   padding: 5px 5px 10px 5px;
-  z-index: 2;
+  min-width: fit-content;
 }
 
 #sort-text {
-  width: 40vw;
-  height: 5vh;
-  padding-top: 10px;
   font-size: 20px;
   font-weight: lighter;
   letter-spacing: 3px;
-  flex-direction: column;
 }
 
 .sorted-buttons {
   margin-top: 2vh;
-  z-index: 2;
+  z-index: 0;
   padding-left: 5px;
 }
 
@@ -174,10 +163,20 @@ footer {
   background-color: #22382a;
 }
 
+.inputsWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .sort-input {
   margin-top: 1vh;
-  margin-left: 0.25vw;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
 }
+
 
 input[type='date'] {
   border: none;
@@ -200,12 +199,10 @@ input[type='date'] {
   cursor: pointer;
 }
 
-
 .enter2 {
   height: 50px;
   z-index: 0;
 }
-
 
 #APIBlock {
   display: flex;

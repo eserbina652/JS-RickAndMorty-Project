@@ -1,10 +1,10 @@
 {
-  "name": " ",
+  "name": "rick-and-morty",
   "version": "0.0.1",
-  "description": "",
-  "keywords": "",
-  "license": "",
-  "author": "",
+  "description": "My project description",
+  "keywords": [],
+  "license": "MIT",
+  "author": "Your Name",
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
@@ -15,3 +15,4 @@
     "parcel-bundler": "^1.12.4"
   }
 }
+

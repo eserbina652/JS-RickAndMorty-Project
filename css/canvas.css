@@ -4,5 +4,6 @@ body {
 
 canvas {
   position: absolute;
+  max-width: 100%;
   z-index: -1;
 }

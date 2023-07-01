@@ -28,11 +28,13 @@
       <div class="buttonsContain">
         <div class="sort">
           <h3 id="sort-text">Sort by Date</h3>
-          <div class="sort-input">
-            <input id="start-date" type="date" name="start-date" value="2012-01-01" maxlength="10">
-          </div>
-          <div class="sort-input">
-            <input id="end-date" type="date" name="end-date" value="2021-01-01" maxlength="10">
+          <div class="inputsWrap">
+            <div class="sort-input">
+              <input id="start-date" type="date" name="start-date" value="2012-01-01" maxlength="10">
+            </div>
+            <div class="sort-input">
+              <input id="end-date" type="date" name="end-date" value="2021-01-01" maxlength="10">
+            </div>
           </div>
           <div class="sorted-buttons">
             <a id="sort-button">Sort</a>
@@ -43,7 +45,6 @@
         <div class="clearButton">
           <div class="clearContainer">
             <p id="clearText">if you want to clear the table, Click the button</p>
-            <div id="clearEnter"></div>
             <a id="clearButton" href="#">Button</a>
           </div>
 
@@ -115,12 +116,6 @@
           <p><input data-rule='text' id="color" class="popup-input" pattern="Please write the color of the devise"
                     type="text" name="color" value="black" maxlength="15"><Br>
           <div class="err" id="error3"></div>
-        </div>
-        <div id="enterDiagonal">
-          <p><b>Enter diagonal</b></p>
-          <p><input data-rule='number' id="diagonal" class="popup-input" title="Please write the diagonal of the devise"
-                    type="text" name="diagonal" value="14.7" maxlength="10"><Br>
-          <div class="err" id="error4"></div>
         </div>
       </div>
       <div id="popup_footer">

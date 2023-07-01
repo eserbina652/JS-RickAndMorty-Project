@@ -1,6 +1,5 @@
 * {
   margin: 0;
-  z-index: 1;
 }
 
 #button_open {
@@ -25,14 +24,11 @@
 }
 
 #popup_container {
-  display: block;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.44);
   min-height: 100vh;
   min-width: 100vw;
   z-index: 4;
-  padding: 15vh 0 0 33vw;
-  margin: 0 auto;
 }
 
 
@@ -42,12 +38,16 @@
 
 #popup_window {
   display: flex;
+  position: relative;
   z-index: 4;
+  align-items: inherit;
   background-color: #476750;
-  max-height: 500px;
-  max-width: 500px;
-  top: 500px;
+  height: fit-content;
+  width: 20%;
+  padding: 3vw;
+  top: 25vh;
   flex-direction: column;
+  left: 36vw;
 }
 
 #popup_header {
@@ -106,24 +106,15 @@
 }
 
 .clearContainer {
-  min-width: 15vw;
-  margin-top: 12.2vh;
+  display: flex;
+  width: 10vw;
+  flex-direction: column;
 }
 
 .clearButton {
-  justify-content: center;
-  width: 15vw;
-  height: 10vh;
   font-size: 18px;
   font-weight: lighter;
   letter-spacing: 3px;
-  flex-direction: column;
-  z-index: 2;
-}
-
-#clearText {
-  margin-top: -14vh;
-  padding-bottom: 2.5vh;
 }
 
 #clearButton {
@@ -150,9 +141,9 @@
   background-color: rgba(0, 0, 0, 0.44);
   min-height: 100vh;
   min-width: 100vw;
-  z-index: 4;
-  padding: 20vh 33vw 0 0;
-  margin: -65vh 0 0 -50vw;
+  z-index: 100;
+  top: 0;
+  left: 0;
 }
 
 #clear-popup-close {
@@ -161,12 +152,11 @@
 
 #little-clear-popup {
   display: flex;
-  margin: 0 auto;
+  margin: 10vw;
   align-items: center;
   z-index: 5;
   background-color: #476750;
-  max-height: 25vh;
-  max-width: 40vw;
+  max-width: fit-content;
   flex-direction: column;
 }
 
@@ -228,7 +218,7 @@
   border-radius: 5px;
   padding: 0.7vh 1.5vw 0.7vh 1.5vw;
   cursor: pointer;
-  margin-top: 10.5vh;
+  margin-top: 13vh;
   transition: background-position 0.3s;
 }
 
@@ -266,8 +256,7 @@
   border-radius: 5px;
   color: #9fa5b5;
   position: absolute;
-  bottom: 7vh;
-  transform: translateX(-50%);
+  bottom: 5vh;
   opacity: 0;
   display: none;
   transition: 0.2s;
@@ -295,11 +284,10 @@
 }
 
 .buttonsContain {
+  align-items: flex-end;
   padding-top: 40px;
   display: flex;
-  flex-direction: row;
-  max-width: 80vw;
-  max-height: 10vh;
+  justify-content: space-evenly;
 }
 
 .invalid {
@@ -310,84 +298,48 @@
   border-bottom: 1px solid red;
 }
 
+.sort {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+  flex-wrap: wrap;
+  padding: 5px 5px 10px 5px;
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
-  .sort {
-    margin: 0;
-  }
-
-  #sort-text {
-    margin: 0 0 0 -10vw;
-  }
-
   .clearContainer {
-    margin: 18.5vh 0 0 -7vw;
-    /*margin-left: -7vw;*/
     min-width: 15vw;
-  }
-
-  #clear-popup {
-    padding: 20vh 33vw 0 0;
-    margin: -75vh 0 0 -55vw;
-  }
-
-  .select {
-    margin-bottom: -12.5vh;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .sort {
-    margin-top: -6vh;
-    max-width: 30vw;
-  }
-
-  #sort-text {
-    margin: 0 13vw 0 0;
-  }
-
   .clearContainer {
-    margin: 18.5vh 0 0 -7vw;
-    min-width: 15vw;
-  }
-
-  #clear-popup {
-    margin: -75vh 0 0 -55vw;
-  }
-
-  #little-clear-popup {
-    margin: 0 0 0 37vw;
-  }
-
-  .select {
-    margin-bottom: -12.5vh;
+    width: fit-content;
+    max-width: 15vw;
   }
 }
 
 @media (max-width: 767px) {
-  .sort {
-    margin-top: -6vh;
-    max-width: 30vw;
-  }
-
-  #sort-text {
-    margin: 0 13vw 0 0;
-  }
-
   .clearContainer {
-    margin: 16vh 0 0 -7vw;
-    min-width: 15vw;
+    margin-top: 50px;
+    width: fit-content;
   }
 
-  #clear-popup {
-    margin: -75vh 0 0 -55vw;
+  .buttonsContain {
+    flex-direction: column;
+    align-items: center;
   }
 
-  #little-clear-popup {
-    margin: 0 0 0 37vw;
+  #popup_window {
+    width: fit-content;
+    margin: 0 auto;
+    left: auto;
   }
 
-  .select {
-    margin-bottom: -12.5vh;
+  .dropdown {
+    justify-content: center;
   }
 }
 

@@ -23,19 +23,15 @@ const trString = document.createElement('tr')
 const tdDate = document.createElement('td')
 const tdName = document.createElement('td')
 const tdColor = document.createElement('td')
-const tdDiagonal = document.createElement('td')
 
 const dateInput = document.getElementById('date')
 const nameInput = document.getElementById('name')
 const colorInput = document.getElementById('color')
-const diagonalInput = document.getElementById('diagonal')
 const errDate = document.getElementById('error1')
 const errName = document.getElementById('error2')
 const errColor = document.getElementById('error3')
-const errDiagonal = document.getElementById('error4')
 
 const dropdowns = document.querySelectorAll('.dropdown')
-
 
 let trBody
 let tableValues = []
@@ -44,19 +40,17 @@ let error = {
   date: false,
   name: false,
   color: false,
-  diagonal: false
 }
 
-
 headerText.innerText = 'Parameters of the desired device'
-headerText.style.whiteSpace = 'nowrap'
+headerText.style.whiteSpace = 'wrap'
 headerText.style.backgroundColor = '#223328'
 headerText.style.border = '3px solid #6e9179'
 headerText.style.fontSize = '25px'
 headerText.style.padding = '20px 0 20px 0'
 
 APIHeader.innerText = 'Response from the server'
-APIHeader.style.fontSize = '50px'
+APIHeader.style.fontSize = '30px'
 APIHeader.style.letterSpacing = '5px'
 APIHeader.style.fontWeight = 'lighter'
 
@@ -77,7 +71,7 @@ popupLittleWindow.addEventListener('click', (event) => {
 Xclose.addEventListener('click', closePopup)
 
 linkClose.addEventListener('click', () => {
-  if (!error.diagonal && !error.color && !error.name && !error.date) {
+  if (!error.color && !error.name && !error.date) {
     retriveFormValue()
     closePopup()
   }
@@ -149,7 +143,7 @@ document.getElementById('sort-button').onclick = function () {
   localDateValue.sort((a, b) => a.date - b.date)
   localDateValue.forEach(el => {
     if (dateStart <= el.date && el.date <= dateEnd) {
-      tableView(el.date, el.name, el.color, el.diagonal)
+      tableView(el.date, el.name, el.color)
     }
   })
 }
@@ -162,7 +156,7 @@ document.getElementById('back-button').onclick = function () {
 
   let localValues = localStorage.getItem('localData')
   localValues = JSON.parse(localValues)
-  localValues.forEach(el => tableView(el.date, el.name, el.color, el.diagonal))
+  localValues.forEach(el => tableView(el.date, el.name, el.color))
 }
 
 document.getElementById('newest').onclick = function () {
@@ -184,7 +178,7 @@ function openPopup() {
 }
 
 
-function popupValidation(name, date, color, diagonal) {
+function popupValidation(name, date, color) {
   name.data.addEventListener('blur', function () {
     let value = this.value
     let check = /^\d+$/.test(value)
@@ -223,26 +217,13 @@ function popupValidation(name, date, color, diagonal) {
       errClear('color', true)
     }
   })
-
-  diagonal.data.addEventListener('blur', function () {
-    let value = this.value
-    let check = !/^[1-9]{0,3}([,.][0-9]{0,3})?$/.test(value)
-
-    if (check) {
-      error.diagonal = true
-      errClear('diagonal', false)
-    } else {
-      error.diagonal = false
-      errClear('diagonal', true)
-    }
-  })
 }
 
 
 popupValidation({name: "name", data: nameInput},
   {name: "date", data: dateInput},
   {name: "color", data: colorInput},
-  {name: "diagonal", data: diagonalInput})
+)
 
 
 function closePopup() {
@@ -272,12 +253,11 @@ function columNames() {
   tdDate.innerText = 'Date'
   tdName.innerText = 'Name'
   tdColor.innerText = 'Color'
-  tdDiagonal.innerText = 'Diagonal'
+
 
   trString.appendChild(tdDate)
   trString.appendChild(tdName)
   trString.appendChild(tdColor)
-  trString.appendChild(tdDiagonal)
 
   tBody.appendChild(trString)
   table.appendChild(tBody)
@@ -285,25 +265,22 @@ function columNames() {
 }
 
 
-const tableView = (date, name, color, diagonal) => {
-  if (!error.date && !error.name && !error.color && !error.diagonal) {
+const tableView = (date, name, color) => {
+  if (!error.date && !error.name && !error.color) {
     let normalDate = new Date(date)
 
     trBody = document.createElement('tr')
     const tdDate = document.createElement('td')
     const tdName = document.createElement('td')
     const tdColor = document.createElement('td')
-    const tdDiagonal = document.createElement('td')
 
     tdDate.innerText = normalDate.toDateString()
     tdName.innerText = name
     tdColor.innerText = color
-    tdDiagonal.innerText = diagonal
 
     trBody.appendChild(tdDate)
     trBody.appendChild(tdName)
     trBody.appendChild(tdColor)
-    trBody.appendChild(tdDiagonal)
 
     table.appendChild(trBody)
   }
@@ -314,19 +291,18 @@ const firstVie = () => {
   const prevStorage = localStorage.getItem('localData') ? JSON.parse(localStorage.getItem('localData')) : []
   prevStorage.forEach(el => {
     tableValues = el
-    tableView(el.date, el.name, el.color, el.diagonal)
+    tableView(el.date, el.name, el.color)
   })
 }
 
 
-const localController = (diagonal, name, color, date) => {
-  if (!error.date && !error.name && !error.color && !error.diagonal) {
+const localController = (name, color, date) => {
+  if (!error.date && !error.name && !error.color) {
     const prevStorage = localStorage.getItem('localData') ? JSON.parse(localStorage.getItem('localData')) : []
     const localStorageData = {
       date: date,
       name: name,
       color: color,
-      diagonal: diagonal
     }
 
     result = [...prevStorage, localStorageData]
@@ -336,9 +312,9 @@ const localController = (diagonal, name, color, date) => {
 
 
 function retriveFormValue() {
-  if (!error.date && !error.name && !error.color && !error.diagonal) {
-    tableView(dateInput.value, nameInput.value, colorInput.value, diagonalInput.value)
-    localController(diagonalInput.value, nameInput.value, colorInput.value, dateInput.value)
+  if (!error.date && !error.name && !error.color) {
+    tableView(dateInput.value, nameInput.value, colorInput.value)
+    localController(nameInput.value, colorInput.value, dateInput.value)
   }
 }
 
@@ -387,21 +363,6 @@ function errClear(type, clear) {
       }
     }
       break;
-
-    case 'diagonal': {
-      if (!errDiagonal.childNodes.length) {
-        p.innerText = 'Incorrect diagonal'
-        diagonalInput.classList.add('invalid')
-        errDiagonal.appendChild(p)
-      }
-      if (clear) {
-        diagonalInput.classList.remove('invalid')
-        errDiagonal.innerHTML = ''
-      }
-    }
-
-      break;
-
     default: {
     }
   }
@@ -417,11 +378,11 @@ function compare(str) {
   if (str === 'oldest') {
     localDateValues.sort((a, b) => a.date - b.date)
     columNames()
-    localDateValues.forEach(el => tableView(el.date, el.name, el.color, el.diagonal))
+    localDateValues.forEach(el => tableView(el.date, el.name, el.color))
   } else if (str === 'newest') {
     localDateValues.sort((a, b) => b.date - a.date)
     columNames()
-    localDateValues.forEach(el => tableView(el.date, el.name, el.color, el.diagonal))
+    localDateValues.forEach(el => tableView(el.date, el.name, el.color))
   }
 }
 
@@ -438,7 +399,7 @@ async function getResponse() {
     p.innerText = el.name
     p.style.fontSize = '40px'
     p.style.color = 'rgba(0,255,149,0.47)'
-    img.style.width = 'auto'
+    img.style.maxWidth = '90%'
     img.style.height = 'auto'
     img.style.border = '3px solid #5dff55'
     img.style.marginTop = '70px'

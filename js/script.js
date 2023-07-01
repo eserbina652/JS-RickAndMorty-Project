@@ -7,14 +7,13 @@ const trString = document.createElement('tr')
 
 const tdName = document.createElement('td')
 const tdColor = document.createElement('td')
-const tdDiagonal = document.createElement('td')
 
 
 headerText.innerText = 'Parameters of the desired device'
+trString.style.display = 'table-column'
 tdName.innerText = 'Name'
 tdColor.innerText = 'Color'
-tdDiagonal.innerText = 'Diagonal'
-headerText.style.whiteSpace = 'nowrap'
+headerText.style.whiteSpace = 'wrap'
 headerText.style.backgroundColor = 'rgb(63, 77, 61)'
 headerText.style.border = '2px solid #5ab055'
 headerText.style.fontSize = '25px'
@@ -23,7 +22,6 @@ wrapper.appendChild(headerText)
 
 trString.appendChild(tdName)
 trString.appendChild(tdColor)
-trString.appendChild(tdDiagonal)
 
 tBody.appendChild(trString)
 table.appendChild(tBody)
@@ -35,20 +33,16 @@ function retriveFormValue(event) {
 
   const name = form.querySelector('[name="name"]')
   const color = form.querySelector('[name="color"]')
-  const diagonal = form.querySelector('[name="diagonal"]')
 
   const trBody = document.createElement('tr')
   const tdName = document.createElement('td')
   const tdColor = document.createElement('td')
-  const tdDiagonal = document.createElement('td')
 
   tdName.innerText = name.value
   tdColor.innerText = color.value
-  tdDiagonal.innerText = diagonal.value
 
   trBody.appendChild(tdName)
   trBody.appendChild(tdColor)
-  trBody.appendChild(tdDiagonal)
   table.appendChild(trBody)
 }
 
